@@ -1,0 +1,249 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #e8f0fc, #f5f7fb);
+    color: #263445;
+    min-height: 100vh;
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+    color: #1e3a5f;
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+/* MENSAJES */
+#mensaje {
+    text-align: center;
+    font-weight: bold;
+    margin: 0 auto 20px;
+    padding: 0;
+    border-radius: 8px;
+    max-width: 500px;
+}
+
+#mensaje:empty {
+    display: none;
+}
+
+#mensaje:not(:empty) {
+    padding: 12px;
+}
+
+#mensaje.exito {
+    background-color: #d1fae5;
+    color: #047857;
+}
+
+#mensaje.error {
+    background-color: #fee2e2;
+    color: #b91c1c;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.contenedorPrincipal {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* PANEL IZQUIERDO */
+.panelIzquierdo {
+    background-color: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#panelEntrada {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* CAMPO DE NOMBRE */
+input[type="text"] {
+    padding: 13px;
+    border: 2px solid #d5deea;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    width: 100%;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #2563eb;
+}
+
+/* BOTONES */
+button {
+    padding: 12px 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2563eb;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* BOTÓN ATENDER */
+#btnAtender {
+    background-color: #059669;
+}
+
+#btnAtender:hover {
+    background-color: #047857;
+}
+
+/* BOTÓN REINICIAR */
+#btnReiniciar {
+    background-color: #dc2626;
+}
+
+#btnReiniciar:hover {
+    background-color: #b91c1c;
+}
+
+/* BOTÓN PAUSA */
+#btnPausa {
+    background-color: #64748b;
+}
+
+#btnPausa:hover {
+    background-color: #475569;
+}
+
+/* ENTRADA PAUSADA */
+#panelEntrada.pausado {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+#panelEntrada.pausado input {
+    background-color: #e5e7eb;
+}
+
+/* PANEL DERECHO */
+.panelDerecho {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* VISOR DEL CLIENTE ACTUAL */
+#visor {
+    background-color: #1e3a5f;
+    color: white;
+    padding: 25px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+#visor h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #bfdbfe;
+}
+
+#clienteActual {
+    font-size: 27px;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}
+
+/* LISTA DE ESPERA */
+#listaContainer {
+    background-color: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    flex: 1;
+}
+
+#listaContainer h2 {
+    color: #1e3a5f;
+    margin-bottom: 15px;
+}
+
+#contador {
+    color: #64748b;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* ELEMENTOS DE LA LISTA */
+#lista {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+#lista li {
+    background-color: #eff6ff;
+    border-left: 5px solid #2563eb;
+    padding: 14px;
+    border-radius: 6px;
+    font-size: 15px;
+    overflow-wrap: anywhere;
+    transition: background-color 0.2s;
+}
+
+#lista li:hover {
+    background-color: #dbeafe;
+}
+
+/* DISEÑO PARA CELULARES */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    .contenedorPrincipal {
+        flex-direction: column;
+    }
+
+    .panelIzquierdo,
+    .panelDerecho {
+        width: 100%;
+    }
+
+    #clienteActual {
+        font-size: 22px;
+    }
+}

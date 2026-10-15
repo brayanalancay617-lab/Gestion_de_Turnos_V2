@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Colas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Sistema de Atención</h1>
+
+<p id="mensaje"></p>
+
+<div class="contenedorPrincipal">
+
+    <!-- IZQUIERDA -->
+    <div class="panelIzquierdo">
+        <div id="panelEntrada">
+            <input type="text" id="nombreInput" placeholder="Ingrese nombre">
+            <button id="btnAnotar">Anotar</button>
+            <button id="btnAtender">Atender Siguiente</button>
+            <button id="btnReiniciar">Reiniciar Día</button>
+        </div>
+
+        <button id="btnPausa">Pausar Entrada</button>
+    </div>
+
+    <!-- DERECHA -->
+    <div class="panelDerecho">
+        <div id="visor">
+            <h2>Atendiendo:</h2>
+            <p id="clienteActual">---</p>
+        </div>
+
+        <div id="listaContainer">
+            <h2>En espera:</h2>
+            <p id="contador"></p>
+            <ul id="lista"></ul>
+        </div>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
